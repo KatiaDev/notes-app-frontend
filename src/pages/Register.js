@@ -35,7 +35,7 @@ function Register({ setIsAuthenticated }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:5000/api/auth/register`, {
+    fetch(`https://note-app-node.onrender.com/api/auth/register`, {
       method: "POST",
       body: JSON.stringify({
         username,
@@ -57,7 +57,7 @@ function Register({ setIsAuthenticated }) {
         }
       })
       .then(() => {
-        fetch(`http://localhost:5000/api/auth/login`, {
+        fetch(`https://note-app-node.onrender.com/api/auth/login`, {
           method: "POST",
           //credentials: "include",
           body: JSON.stringify({

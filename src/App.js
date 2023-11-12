@@ -20,7 +20,7 @@ function App() {
 
     const token = localStorage.getItem("token");
 
-    fetch(`http://localhost:5000/api/auth/check-auth`, {
+    fetch(`https://note-app-node.onrender.com/api/auth/check-auth`, {
       headers: {
         Authorization: token,
       },

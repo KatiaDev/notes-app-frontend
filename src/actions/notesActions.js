@@ -7,7 +7,7 @@ export const getNotesAction = () => async (dispatch) => {
 
   try {
     const notes = await fetch(
-      `http://localhost:5000/api/notes`,
+      `https://note-app-node.onrender.com/api/notes`,
       {
         headers: {
           Authorization: localStorage.getItem("token"),
@@ -35,7 +35,7 @@ export const ADD_NOTE_FAILURE = "ADD_NOTE_FAILURE";
 export const addNoteAction = (note) => async (dispatch) => {
   try {
     const addedNote = await fetch(
-      `http://localhost:5000/api/notes`,
+      `https://note-app-node.onrender.com/api/notes`,
       {
         method: "POST",
         body: JSON.stringify({ title: note.title, content: note.content, tags: note.tags }),
@@ -59,7 +59,7 @@ export const EDIT_NOTE_FAILURE = "EDIT_NOTE_FAILURE";
 export const updateNoteAction = (noteId, note) => async (dispatch) => {
   try {
     const updatedNote = await fetch(
-      `http://localhost:5000/api/notes/${noteId}`,
+      `https://note-app-node.onrender.com/api/notes/${noteId}`,
       {
         method: "PUT",
         body: JSON.stringify({ title: note.title, content: note.content }),
@@ -83,7 +83,7 @@ export const DELETE_NOTE_FAILURE = "DELETE_NOTE_FAILURE";
 export const deleteNoteAction = (noteId) => async (dispatch) => {
   try {
     const deletedNote = await fetch(
-      `http://localhost:5000/api/notes/${noteId}`,
+      `https://note-app-node.onrender.com/api/notes/${noteId}`,
       {
         method: "DELETE",
         headers: {
